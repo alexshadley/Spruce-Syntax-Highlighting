@@ -1,0 +1,25 @@
+{
+    "name": "spruce-syntax-highlighting",
+    "displayName": "Spruce Syntax Highlighting",
+    "description": "Syntax highlighting for the Spruce Programming Language",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.45.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "spruce",
+            "aliases": ["Spruce", "spruce"],
+            "extensions": [".sp"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "spruce",
+            "scopeName": "source.sp",
+            "path": "./syntaxes/spruce.tmLanguage.json"
+        }]
+    }
+}

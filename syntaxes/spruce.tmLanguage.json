@@ -1,0 +1,77 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Spruce",
+	"patterns": [
+		{
+			"include": "#types"
+		},
+		{
+			"include": "#functions"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#identifiers"
+		},
+		{
+			"include": "#constants"
+		}
+	],
+	"repository": {
+		"types": {
+			"patterns": [{
+				"name": "meta.type",
+				"match": "(type)([A-Z]([A-Za-z0-9])*)",
+				"captures": {
+					"1": { "name": "keyword.other.spruce" },
+					"2": { "name": "entity.name.type.spruce" }
+				}
+			}]
+		},
+		"functions": {
+			"patterns": [{
+				"name": "meta.function",
+				"begin": "^([a-z]([A-Za-z0-9])*)\\(",
+				"end": "$",
+				"beginCaptures": {
+					"1": { "name": "entity.name.function.spruce" }
+				},
+				"patterns": [{
+					"name": "meta.argument",
+					"match": "([a-z][A-Za-z]*)(:[^,]*)?,?",
+					"captures": {
+						"1": { "name": "variable.parameter.spruce"}
+					}
+				}]
+			}]
+		},
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.spruce",
+				"match": "case"
+			},
+			{
+				"name": "keyword.operator.spruce",
+				"match": "\\+|\\-|\\*|\\\\|==|!=|\\<=|\\>=|\\<|\\>|\\%|\\^|\\-\\>"
+			}]
+		},
+		"identifiers": {
+			"patterns": [{
+				"name": "meta.identifier.spruce",
+				"match": "(([a-z][A-Za-z0-9]*)|([A-Z][A-Za-z0-9]*))",
+				"captures": {
+					"2": { "name": "variable.other.spruce" },
+					"3": { "name": "constant.type-constructor.spruce" }
+				}
+			}]
+		},
+		"constants": {
+			"patterns": [{
+				"name": "constant.numeric.spruce",
+				"match": "[1-9]([0-9])*|0"
+			}]
+		}
+	},
+	"scopeName": "source.sp"
+}

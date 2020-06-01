@@ -3,6 +3,11 @@
     "displayName": "Spruce Syntax Highlighting",
     "description": "Syntax highlighting for the Spruce Programming Language",
     "version": "0.0.1",
+    "publisher": "spruce",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/alexshadley/Spruce-Syntax-Highlighting"
+      },
     "engines": {
         "vscode": "^1.45.0"
     },

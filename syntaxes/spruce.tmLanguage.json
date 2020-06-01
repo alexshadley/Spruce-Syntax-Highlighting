@@ -22,10 +22,10 @@
 		"types": {
 			"patterns": [{
 				"name": "meta.type",
-				"match": "(type)([A-Z]([A-Za-z0-9])*)",
+				"match": "(type)( )*([A-Z]([A-Za-z0-9])*)",
 				"captures": {
 					"1": { "name": "keyword.other.spruce" },
-					"2": { "name": "entity.name.type.spruce" }
+					"3": { "name": "entity.name.type.spruce" }
 				}
 			}]
 		},

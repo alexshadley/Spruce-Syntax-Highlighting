@@ -6,6 +6,9 @@
 			"include": "#types"
 		},
 		{
+			"include": "#interops"
+		},
+		{
 			"include": "#functions"
 		},
 		{
@@ -27,6 +30,24 @@
 					"1": { "name": "keyword.other.spruce" },
 					"3": { "name": "entity.name.type.spruce" }
 				}
+			}]
+		},
+		"interops": {
+			"patterns": [{
+				"name": "meta.interop",
+				"begin": "^(interop)( )*([A-Za-z_]([A-Za-z0-9_\\.])*)\\(",
+				"end": "$",
+				"beginCaptures": {
+					"1": { "name": "keyword.other.spruce" },
+					"3": { "name": "entity.name.function.spruce" }
+				},
+				"patterns": [{
+					"name": "meta.argument",
+					"match": "([a-z][A-Za-z]*)(:[^,]*)?,?",
+					"captures": {
+						"1": { "name": "variable.parameter.spruce"}
+					}
+				}]
 			}]
 		},
 		"functions": {

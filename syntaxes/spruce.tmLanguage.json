@@ -3,6 +3,9 @@
 	"name": "Spruce",
 	"patterns": [
 		{
+			"include": "#imports"
+		},
+		{
 			"include": "#types"
 		},
 		{
@@ -18,10 +21,23 @@
 			"include": "#identifiers"
 		},
 		{
+			"include": "#strings"
+		},
+		{
 			"include": "#constants"
 		}
 	],
 	"repository": {
+		"imports": {
+			"patterns": [{
+				"name": "meta.import",
+				"match": "(import)( )*(([A-Za-z0-9_/])*)",
+				"captures": {
+					"1": { "name": "keyword.other.spruce" },
+					"3": { "name": "variable.other.spruce" }
+				}
+			}]
+		},
 		"types": {
 			"patterns": [{
 				"name": "meta.type",
@@ -85,6 +101,17 @@
 					"2": { "name": "variable.other.spruce" },
 					"3": { "name": "constant.type-constructor.spruce" }
 				}
+			}]
+		},
+		"strings": {
+			"patterns": [{
+				"name": "string.quoted.double.untitled",
+				"begin": "\"",
+				"end": "\"",
+				"patterns": [{
+					"name": "constant.character.escape.untitled",
+					"match": "\\."
+				}]
 			}]
 		},
 		"constants": {

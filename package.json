@@ -2,7 +2,7 @@
     "name": "spruce-syntax-highlighting",
     "displayName": "Spruce Syntax Highlighting",
     "description": "Syntax highlighting for the Spruce Programming Language",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "publisher": "spruce",
     "repository": {
         "type": "git",
